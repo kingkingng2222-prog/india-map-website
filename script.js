@@ -1,8 +1,35 @@
+let stateData = {};
+
+fetch("data.json")
+  .then(res => res.json())
+  .then(data => stateData = data);
+
 document.querySelectorAll("svg path").forEach(state => {
 
   state.addEventListener("click", () => {
-    document.getElementById("details").innerHTML =
-      "<h3>State Code: " + state.id + "</h3>";
+    const code = state.id;
+    const info = stateData[code];
+
+    if (!info) {
+      document.getElementById("details").innerHTML =
+        "<p>No data available</p>";
+      return;
+    }
+
+    let html = `
+      <h2>${info.name}</h2>
+      <p><b>Capital:</b> ${info.capital}</p>
+      <h3>Cities</h3>
+      <ul>
+    `;
+
+    info.cities.forEach(city => {
+      html += `<li><b>${city.name}</b> – ${city.famous}</li>`;
+    });
+
+    html += "</ul>";
+
+    document.getElementById("details").innerHTML = html;
   });
 
   state.addEventListener("mouseover", () => {
