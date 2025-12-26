@@ -25,5 +25,16 @@
         "famous": "Bara Imambara"
       }
     ]
+  },
+  "wb": {
+    "name": "WEST BENGAL ",
+    "capital": "KOLKATA ",
+    "cities": [
+      {
+        "name": "ASSANSOLE ",
+        "population": "",
+        "famous": ""
+      }
+    ]
   }
 }
