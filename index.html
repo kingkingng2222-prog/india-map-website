@@ -11,34 +11,40 @@
 </header>
 
 <div id="container">
- <div id="map">
 
-<svg viewBox="0 0 200 200" width="100%" xmlns="http://www.w3.org/2000/svg">
+  <div id="map">
 
-  <!-- West Bengal -->
-  <path id="WB"
-        d="M120 60 L140 80 L135 110 L115 100 Z"
-        fill="#cfd8dc"
-        stroke="#333"
-        stroke-width="1"/>
+    <!-- INLINE SVG MAP (MUST BE HERE) -->
+    <svg viewBox="0 0 200 200" width="100%" height="400"
+         xmlns="http://www.w3.org/2000/svg">
 
-  <!-- Uttar Pradesh -->
-  <path id="UP"
-        d="M60 60 L110 60 L110 80 L60 80 Z"
-        fill="#cfd8dc"
-        stroke="#333"
-        stroke-width="1"/>
+      <!-- West Bengal -->
+      <path id="WB"
+            d="M120 60 L140 80 L135 110 L115 100 Z"
+            fill="#cfd8dc"
+            stroke="#333"
+            stroke-width="1"/>
 
-</svg>
+      <!-- Uttar Pradesh -->
+      <path id="UP"
+            d="M60 60 L110 60 L110 80 L60 80 Z"
+            fill="#cfd8dc"
+            stroke="#333"
+            stroke-width="1"/>
 
-</div>
+    </svg>
 
+  </div>
 
   <div id="details">
     <p>Click on a state to see details</p>
   </div>
+
 </div>
+
 <script src="script.js"></script>
 </body>
+
+
 </html>
 
