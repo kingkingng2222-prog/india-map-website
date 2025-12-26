@@ -1,50 +1,20 @@
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>India Map Website</title>
-  <link rel="stylesheet" href="style.css">
+  <title>SVG Test</title>
 </head>
 <body>
 
-<header>
-  <h1>India Interactive Map</h1>
-</header>
+<h2>SVG MAP TEST</h2>
 
-<div id="container">
+<svg width="300" height="300" style="border:1px solid black"
+     xmlns="http://www.w3.org/2000/svg">
 
-  <div id="map">
+  <rect x="50" y="50" width="100" height="60"
+        fill="gray" stroke="black"/>
 
-    <!-- INLINE SVG MAP (MUST BE HERE) -->
-    <svg viewBox="0 0 200 200" width="100%" height="400"
-         xmlns="http://www.w3.org/2000/svg">
+</svg>
 
-      <!-- West Bengal -->
-      <path id="WB"
-            d="M120 60 L140 80 L135 110 L115 100 Z"
-            fill="#cfd8dc"
-            stroke="#333"
-            stroke-width="1"/>
-
-      <!-- Uttar Pradesh -->
-      <path id="UP"
-            d="M60 60 L110 60 L110 80 L60 80 Z"
-            fill="#cfd8dc"
-            stroke="#333"
-            stroke-width="1"/>
-
-    </svg>
-
-  </div>
-
-  <div id="details">
-    <p>Click on a state to see details</p>
-  </div>
-
-</div>
-
-<script src="script.js"></script>
 </body>
-
-
 </html>
-
