@@ -1,0 +1,29 @@
+{
+  "WB": {
+    "name": "West Bengal",
+    "capital": "Kolkata",
+    "cities": [
+      {
+        "name": "Kolkata",
+        "population": "1.5 Crore",
+        "famous": "Howrah Bridge, Victoria Memorial"
+      },
+      {
+        "name": "Darjeeling",
+        "population": "1.8 Lakh",
+        "famous": "Tea Garden, Tiger Hill"
+      }
+    ]
+  },
+  "UP": {
+    "name": "Uttar Pradesh",
+    "capital": "Lucknow",
+    "cities": [
+      {
+        "name": "Lucknow",
+        "population": "34 Lakh",
+        "famous": "Bara Imambara"
+      }
+    ]
+  }
+}
