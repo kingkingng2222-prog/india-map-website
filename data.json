@@ -1,24 +1,32 @@
-<div id="map"> … inline SVG … </div>
-<div id="details"></div>
-<button onclick="toggleLang()">EN / BN</button>
-<script src="script.js"></script>
 {
   "WB": {
     "state": {
-      "generalIntroduction": {
+      "intro": {
         "en": "West Bengal is an eastern state of India.",
         "bn": "পশ্চিমবঙ্গ ভারতের পূর্বাঞ্চলের একটি রাজ্য।"
-      },
-      "capitalAndMajorCities": {
-        "en": "Capital is Kolkata.",
-        "bn": "রাজধানী হলো কলকাতা।"
       }
     },
     "cities": {
       "Kolkata": {
-        "generalIntroduction": {
-          "en": "Kolkata is the capital city of West Bengal.",
-          "bn": "কলকাতা পশ্চিমবঙ্গের রাজধানী শহর।"
+        "intro": {
+          "en": "Kolkata is the capital of West Bengal.",
+          "bn": "কলকাতা পশ্চিমবঙ্গের রাজধানী।"
+        }
+      }
+    }
+  },
+  "UP": {
+    "state": {
+      "intro": {
+        "en": "Uttar Pradesh is a northern state of India.",
+        "bn": "উত্তরপ্রদেশ ভারতের একটি উত্তরাঞ্চলীয় রাজ্য।"
+      }
+    },
+    "cities": {
+      "Lucknow": {
+        "intro": {
+          "en": "Lucknow is the capital of Uttar Pradesh.",
+          "bn": "লখনউ উত্তরপ্রদেশের রাজধানী।"
         }
       }
     }
