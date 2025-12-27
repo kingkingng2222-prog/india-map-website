@@ -1,40 +1,42 @@
 {
   "WB": {
-    "name": "West Bengal",
-    "capital": "Kolkata",
-    "cities": [
-      {
-        "name": "Kolkata",
-        "population": "1.5 Crore",
-        "famous": "Howrah Bridge, Victoria Memorial"
-      },
-      {
-        "name": "Darjeeling",
-        "population": "1.8 Lakh",
-        "famous": "Tea Garden, Tiger Hill"
+    "state": {
+      "generalIntroduction": "Test State Intro",
+      "capitalAndMajorCities": "Kolkata, Howrah",
+      "geographicalLocation": "Eastern India",
+      "areaAndPopulation": "88,752 sq km, 9 Crore",
+      "languages": "Bengali",
+      "historicalBackground": "Freedom movement",
+      "cultureAndHeritage": "Rich culture",
+      "festivals": "Durga Puja",
+      "economy": "Agriculture and Industry",
+      "agriculture": "Rice, Jute",
+      "industries": "IT, Steel",
+      "rivers": "Ganga",
+      "naturalFeatures": "Plains and Hills",
+      "sundarbans": "Mangrove forest",
+      "education": "Universities",
+      "tourism": "Darjeeling"
+    },
+    "cities": {
+      "Kolkata": {
+        "generalIntroduction": "Capital city",
+        "historicalBackground": "British capital",
+        "geographicalLocation": "Hooghly river",
+        "areaAndPopulation": "205 sq km",
+        "administrativeStatus": "Municipal Corporation",
+        "language": "Bengali",
+        "cultureAndHeritage": "Cultural capital",
+        "festivals": "Durga Puja",
+        "economy": "Trade and IT",
+        "education": "Universities",
+        "transportation": "Metro, Rail",
+        "architectureAndLandmarks": "Howrah Bridge",
+        "sports": "Football",
+        "foodCulture": "Rosogolla",
+        "tourism": "Victoria Memorial",
+        "importanceOfCityName": "Derived from Kalikata"
       }
-    ]
-  },
-  "UP": {
-    "name": "Uttar Pradesh",
-    "capital": "Lucknow",
-    "cities": [
-      {
-        "name": "Lucknow",
-        "population": "34 Lakh",
-        "famous": "Bara Imambara"
-      }
-    ]
-  },
-  "wb": {
-    "name": "WEST BENGAL ",
-    "capital": "KOLKATA ",
-    "cities": [
-      {
-        "name": "ASSANSOLE ",
-        "population": "",
-        "famous": ""
-      }
-    ]
+    }
   }
 }
