@@ -1,10 +1,10 @@
 {
   "WB": {
     "state": {
-      "generalIntroduction": "Test State Intro",
+      "generalIntroduction": "West Bengal is an eastern state of India.",
       "capitalAndMajorCities": "Kolkata, Howrah",
       "geographicalLocation": "Eastern India",
-      "areaAndPopulation": "88,752 sq km, 9 Crore",
+      "areaAndPopulation": "88,752 sq km, 9+ crore",
       "languages": "Bengali",
       "historicalBackground": "Freedom movement",
       "cultureAndHeritage": "Rich culture",
@@ -20,9 +20,9 @@
     },
     "cities": {
       "Kolkata": {
-        "generalIntroduction": "Capital city",
+        "generalIntroduction": "Capital city of West Bengal",
         "historicalBackground": "British capital",
-        "geographicalLocation": "Hooghly river",
+        "geographicalLocation": "Hooghly river bank",
         "areaAndPopulation": "205 sq km",
         "administrativeStatus": "Municipal Corporation",
         "language": "Bengali",
@@ -35,7 +35,7 @@
         "sports": "Football",
         "foodCulture": "Rosogolla",
         "tourism": "Victoria Memorial",
-        "importanceOfCityName": "Derived from Kalikata"
+        "importanceOfCityName": "From Kalikata"
       }
     }
   }
