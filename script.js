@@ -9,10 +9,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const langBtn = document.getElementById("langBtn");
 
   fetch("data.json")
-    .then(res => res.json())
-    .then(json => DATA = json);
+    .then(r => r.json())
+    .then(d => DATA = d);
 
-  langBtn.onclick = function () {
+  langBtn.onclick = () => {
     currentLang = currentLang === "en" ? "bn" : "en";
     alert("Language: " + currentLang.toUpperCase());
   };
@@ -25,27 +25,27 @@ document.addEventListener("DOMContentLoaded", function () {
     const state = DATA[code];
     if (!state) return;
 
-    let html = `
-      <h3>State Information</h3>
-      <p>${state.state.intro[currentLang]}</p>
-      <h4>Cities</h4>
-      <ul>
-    `;
-
-    for (let city in state.cities) {
-      html += `<li onclick="showCity('${code}','${city}')"
-               style="color:blue;cursor:pointer">${city}</li>`;
+    let html = `<h3>State Information</h3>`;
+    for (let i = 1; i <= 16; i++) {
+      html += `<p><b>${i}.</b> ${state.state["p"+i][currentLang]}</p>`;
     }
 
-    html += "</ul>";
+    html += `<h4>Cities</h4><ul>`;
+    for (let city in state.cities) {
+      html += `<li style="cursor:pointer;color:blue"
+               onclick="showCity('${code}','${city}')">${city}</li>`;
+    }
+    html += `</ul>`;
+
+    details.innerHTML = html;
+  };
+
+  window.showCity = function (code, city) {
+    const c = DATA[code].cities[city];
+    let html = `<h3>${city} – City Information</h3>`;
+    for (let i = 1; i <= 16; i++) {
+      html += `<p><b>${i}.</b> ${c["p"+i][currentLang]}</p>`;
+    }
     details.innerHTML = html;
   };
 });
-
-function showCity(code, city) {
-  const c = DATA[code].cities[city];
-  details.innerHTML = `
-    <h3>${city}</h3>
-    <p>${c.intro[currentLang]}</p>
-  `;
-}
