@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<html>
 <html>
 <head>
   <meta charset="UTF-8">
@@ -9,12 +9,10 @@
       background: #f4f6f8;
       padding: 20px;
     }
-    h1 {
-      color: #0b5ed7;
-    }
-    input, textarea, button {
+    h1 { color: #0b5ed7; }
+    input, button {
       width: 100%;
-      margin: 8px 0;
+      margin: 6px 0;
       padding: 8px;
     }
     button {
@@ -36,21 +34,20 @@
 
 <h1>Admin Panel</h1>
 
-<h3>Add / Update State</h3>
-
+<h3>State Info</h3>
 <input id="stateCode" placeholder="State Code (WB)">
 <input id="stateName" placeholder="State Name">
 <input id="capital" placeholder="Capital">
 
-<h3>Add City</h3>
-
+<h3>City Info</h3>
 <input id="cityName" placeholder="City Name">
 <input id="population" placeholder="Population">
 <input id="famous" placeholder="Famous For">
 
-<button onclick="generateJSON()">Generate JSON</button>
+<button onclick="addCity()">Add City</button>
+<button onclick="removeCity()">Remove City</button>
 
-<h3>Updated JSON (Copy this)</h3>
+<h3>Updated JSON (Copy & Paste into data.json)</h3>
 <pre id="output"></pre>
 
 <script>
@@ -60,7 +57,7 @@ fetch("data.json")
   .then(res => res.json())
   .then(json => data = json);
 
-function generateJSON() {
+function addCity() {
   const code = stateCode.value;
   if (!data[code]) {
     data[code] = {
@@ -76,6 +73,20 @@ function generateJSON() {
     famous: famous.value
   });
 
+  showJSON();
+}
+
+function removeCity() {
+  const code = stateCode.value;
+  if (!data[code]) return;
+
+  data[code].cities =
+    data[code].cities.filter(c => c.name !== cityName.value);
+
+  showJSON();
+}
+
+function showJSON() {
   document.getElementById("output").textContent =
     JSON.stringify(data, null, 2);
 }
