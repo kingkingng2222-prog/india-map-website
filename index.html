@@ -1,12 +1,64 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>India Map</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    #container {
+      display: flex;
+      gap: 20px;
+    }
+
+    #map {
+      border: 1px solid black;
+      padding: 10px;
+    }
+
+    #details {
+      width: 300px;
+      border: 1px solid black;
+      padding: 10px;
+    }
+
+    /* IMPORTANT: enable pointer events */
+    svg path {
+      pointer-events: all;
+      cursor: pointer;
+      fill: #cfd8dc;
+      stroke: #333;
+      stroke-width: 1;
+    }
+  </style>
+</head>
 <body>
 
-<svg width="200" height="200" style="border:1px solid black">
-  <path id="WB" d="M50 50 L150 50 L150 100 L50 100 Z"
-        fill="#ccc" stroke="#000"/>
-</svg>
+<h2>India Map</h2>
 
+<div id="container">
+  <div id="map">
+    <!-- INLINE SVG -->
+    <svg viewBox="0 0 200 200" width="250" height="250">
+
+      <!-- UTTAR PRADESH -->
+      <path id="UP" d="M40 50 L120 50 L120 80 L40 80 Z"></path>
+
+      <!-- WEST BENGAL -->
+      <path id="WB" d="M130 60 L160 80 L150 120 L120 100 Z"></path>
+
+    </svg>
+  </div>
+
+  <div id="details">
+    <p>Click a state</p>
+  </div>
+</div>
+
+<!-- SCRIPT MUST BE LAST -->
 <script src="script.js"></script>
 </body>
 </html>
