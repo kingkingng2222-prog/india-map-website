@@ -1,23 +1,22 @@
 {
   "WB": {
     "state": {
-      "generalIntroduction": "Test OK",
-      "capitalAndMajorCities": "Kolkata",
-      "geographicalLocation": "East India",
-      "areaAndPopulation": "Test",
-      "languages": "Bengali",
-      "historicalBackground": "Test",
-      "cultureAndHeritage": "Test",
-      "festivals": "Test",
-      "economy": "Test",
-      "agriculture": "Test",
-      "industries": "Test",
-      "rivers": "Test",
-      "naturalFeatures": "Test",
-      "sundarbans": "Test",
-      "education": "Test",
-      "tourism": "Test"
+      "generalIntroduction": {
+        "en": "West Bengal is an eastern state of India.",
+        "bn": "পশ্চিমবঙ্গ ভারতের পূর্বাঞ্চলের একটি রাজ্য।"
+      },
+      "capitalAndMajorCities": {
+        "en": "Capital is Kolkata.",
+        "bn": "রাজধানী হলো কলকাতা।"
+      }
     },
-    "cities": {}
+    "cities": {
+      "Kolkata": {
+        "generalIntroduction": {
+          "en": "Kolkata is the capital city of West Bengal.",
+          "bn": "কলকাতা পশ্চিমবঙ্গের রাজধানী শহর।"
+        }
+      }
+    }
   }
 }
