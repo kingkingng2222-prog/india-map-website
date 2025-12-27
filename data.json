@@ -1,3 +1,7 @@
+<div id="map"> … inline SVG … </div>
+<div id="details"></div>
+<button onclick="toggleLang()">EN / BN</button>
+<script src="script.js"></script>
 {
   "WB": {
     "state": {
