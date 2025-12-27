@@ -1,12 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  const details = document.getElementById("details");
-
   document.querySelectorAll("svg path").forEach(state => {
 
     state.addEventListener("click", function () {
-      details.innerHTML =
-        "<h3>State Clicked: " + this.id + "</h3>";
+      alert("Clicked state ID: " + this.id);
     });
 
     state.addEventListener("mouseenter", function () {
