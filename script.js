@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-
+const details = document.getElementById("details");
   fetch("data.json")
     .then(res => res.json())
     .then(data => {
