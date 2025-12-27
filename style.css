@@ -57,12 +57,6 @@ header button {
   cursor: pointer;
   pointer-events: all;
 }
-
-#map svg path:hover {
-  fill: #90caf9;
-}
-
-
 svg path:hover {
   fill: #90caf9;
 }
