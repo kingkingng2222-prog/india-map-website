@@ -1,4 +1,4 @@
-<html>
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
@@ -10,7 +10,8 @@
       padding: 20px;
     }
     h1 { color: #0b5ed7; }
-    input, button {
+    h2 { margin-top: 30px; }
+    textarea, input, button {
       width: 100%;
       margin: 6px 0;
       padding: 8px;
@@ -34,59 +35,100 @@
 
 <h1>Admin Panel</h1>
 
-<h3>State Info</h3>
+<h2>State Information</h2>
+
 <input id="stateCode" placeholder="State Code (WB)">
-<input id="stateName" placeholder="State Name">
-<input id="capital" placeholder="Capital">
+<textarea id="s1" placeholder="1. General Introduction"></textarea>
+<textarea id="s2" placeholder="2. Capital and Major Cities"></textarea>
+<textarea id="s3" placeholder="3. Geographical Location"></textarea>
+<textarea id="s4" placeholder="4. Area and Population"></textarea>
+<textarea id="s5" placeholder="5. Languages"></textarea>
+<textarea id="s6" placeholder="6. Historical Background"></textarea>
+<textarea id="s7" placeholder="7. Culture and Heritage"></textarea>
+<textarea id="s8" placeholder="8. Festivals"></textarea>
+<textarea id="s9" placeholder="9. Economy"></textarea>
+<textarea id="s10" placeholder="10. Agriculture"></textarea>
+<textarea id="s11" placeholder="11. Industries"></textarea>
+<textarea id="s12" placeholder="12. Rivers"></textarea>
+<textarea id="s13" placeholder="13. Natural Features"></textarea>
+<textarea id="s14" placeholder="14. Sundarbans"></textarea>
+<textarea id="s15" placeholder="15. Education"></textarea>
+<textarea id="s16" placeholder="16. Tourism"></textarea>
 
-<h3>City Info</h3>
+<h2>City Information</h2>
+
 <input id="cityName" placeholder="City Name">
-<input id="population" placeholder="Population">
-<input id="famous" placeholder="Famous For">
+<textarea id="c1" placeholder="1. General Introduction"></textarea>
+<textarea id="c2" placeholder="2. Historical Background"></textarea>
+<textarea id="c3" placeholder="3. Geographical Location"></textarea>
+<textarea id="c4" placeholder="4. Area and Population"></textarea>
+<textarea id="c5" placeholder="5. Administrative Status"></textarea>
+<textarea id="c6" placeholder="6. Language"></textarea>
+<textarea id="c7" placeholder="7. Culture and Heritage"></textarea>
+<textarea id="c8" placeholder="8. Festivals"></textarea>
+<textarea id="c9" placeholder="9. Economy"></textarea>
+<textarea id="c10" placeholder="10. Education"></textarea>
+<textarea id="c11" placeholder="11. Transportation"></textarea>
+<textarea id="c12" placeholder="12. Architecture and Landmarks"></textarea>
+<textarea id="c13" placeholder="13. Sports"></textarea>
+<textarea id="c14" placeholder="14. Food Culture"></textarea>
+<textarea id="c15" placeholder="15. Tourism"></textarea>
+<textarea id="c16" placeholder="16. Importance of city name"></textarea>
 
-<button onclick="addCity()">Add City</button>
-<button onclick="removeCity()">Remove City</button>
+<button onclick="generate()">Generate JSON</button>
 
-<h3>Updated JSON (Copy & Paste into data.json)</h3>
+<h2>Updated JSON (Copy → data.json)</h2>
 <pre id="output"></pre>
 
 <script>
 let data = {};
 
 fetch("data.json")
-  .then(res => res.json())
-  .then(json => data = json);
+  .then(r => r.json())
+  .then(d—from => data = d);
 
-function addCity() {
+function generate() {
   const code = stateCode.value;
-  if (!data[code]) {
-    data[code] = {
-      name: stateName.value,
-      capital: capital.value,
-      cities: []
-    };
-  }
+  if (!data[code]) data[code] = { state: {}, cities: {} };
 
-  data[code].cities.push({
-    name: cityName.value,
-    population: population.value,
-    famous: famous.value
-  });
+  data[code].state = {
+    generalIntroduction: s1.value,
+    capitalAndMajorCities: s2.value,
+    geographicalLocation: s3.value,
+    areaAndPopulation: s4.value,
+    languages: s5.value,
+    historicalBackground: s6.value,
+    cultureAndHeritage: s7.value,
+    festivals: s8.value,
+    economy: s9.value,
+    agriculture: s10.value,
+    industries: s11.value,
+    rivers: s12.value,
+    naturalFeatures: s13.value,
+    sundarbans: s14.value,
+    education: s15.value,
+    tourism: s16.value
+  };
 
-  showJSON();
-}
+  data[code].cities[cityName.value] = {
+    generalIntroduction: c1.value,
+    historicalBackground: c2.value,
+    geographicalLocation: c3.value,
+    areaAndPopulation: c4.value,
+    administrativeStatus: c5.value,
+    language: c6.value,
+    cultureAndHeritage: c7.value,
+    festivals: c8.value,
+    economy: c9.value,
+    education: c10.value,
+    transportation: c11.value,
+    architectureAndLandmarks: c12.value,
+    sports: c13.value,
+    foodCulture: c14.value,
+    tourism: c15.value,
+    importanceOfCityName: c16.value
+  };
 
-function removeCity() {
-  const code = stateCode.value;
-  if (!data[code]) return;
-
-  data[code].cities =
-    data[code].cities.filter(c => c.name !== cityName.value);
-
-  showJSON();
-}
-
-function showJSON() {
   document.getElementById("output").textContent =
     JSON.stringify(data, null, 2);
 }
