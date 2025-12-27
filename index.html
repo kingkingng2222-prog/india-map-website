@@ -1,64 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>India Map</title>
+<meta charset="UTF-8">
+<title>India Interactive Map</title>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-    }
+<style>
+body { font-family: Arial, sans-serif; }
+#container { display: flex; gap: 20px; }
+#map { border: 1px solid #000; padding: 10px; }
+#details { width: 380px; border: 1px solid #000; padding: 10px; }
 
-    #container {
-      display: flex;
-      gap: 20px;
-    }
-
-    #map {
-      border: 1px solid black;
-      padding: 10px;
-    }
-
-    #details {
-      width: 300px;
-      border: 1px solid black;
-      padding: 10px;
-    }
-
-    /* IMPORTANT: enable pointer events */
-    svg path {
-      pointer-events: all;
-      cursor: pointer;
-      fill: #cfd8dc;
-      stroke: #333;
-      stroke-width: 1;
-    }
-  </style>
+svg path {
+  fill: #cfd8dc;
+  stroke: #333;
+  cursor: pointer;
+}
+</style>
 </head>
+
 <body>
 
-<h2>India Map</h2>
+<h2>India Interactive Map</h2>
+<button id="langBtn">EN / BN</button>
 
 <div id="container">
-  <div id="map">
-    <!-- INLINE SVG -->
-    <svg viewBox="0 0 200 200" width="250" height="250">
 
-      <!-- UTTAR PRADESH -->
-      <path id="UP" d="M40 50 L120 50 L120 80 L40 80 Z"></path>
+<div id="map">
+<svg viewBox="0 0 200 200" width="250" height="250">
 
-      <!-- WEST BENGAL -->
-      <path id="WB" d="M130 60 L160 80 L150 120 L120 100 Z"></path>
+  <!-- UP -->
+  <path id="UP" d="M40 50 L120 50 L120 80 L40 80 Z"></path>
 
-    </svg>
-  </div>
+  <!-- WB -->
+  <path id="WB" d="M130 60 L160 80 L150 120 L120 100 Z"></path>
 
-  <div id="details">
-    <p>Click a state</p>
-  </div>
+</svg>
 </div>
 
-<!-- SCRIPT MUST BE LAST -->
+<div id="details">
+  <p>Click a state</p>
+</div>
+
+</div>
+
 <script src="script.js"></script>
 </body>
 </html>
