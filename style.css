@@ -38,28 +38,27 @@ header button {
   height: calc(100vh - 56px);
 }
 
-/* MAP */
 #mapSection {
-  flex: 1;
-  padding: 10px;
-  overflow: auto;
+  position: relative;
+  z-index: 1;
+}
+
+#map {
+  position: relative;
+  z-index: 2;
 }
 
 #map svg {
-  width: 100%;
-  max-width: 500px;
-}
-
-#map svg path {
-  fill: #cfd8dc;
-  stroke: #333;
-  stroke-width: 1;
-  cursor: pointer;
+  position: relative;
+  z-index: 3;
   pointer-events: all;
 }
-svg path:hover {
-  fill: #90caf9;
+
+#details {
+  position: relative;
+  z-index: 1;
 }
+
 
 /* DETAILS */
 #details {
