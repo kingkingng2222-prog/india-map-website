@@ -7,10 +7,34 @@ let globalData = {};      // full data.json store
 /* =========================
    LANGUAGE TOGGLE (GLOBAL)
 ========================= */
+// ===== LANGUAGE TOGGLE (SAFE VERSION) =====
+let currentLang = "en";
+let globalData = {};
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  // BUTTON BINDING (THIS WAS MISSING)
+  const langBtn = document.getElementById("langBtn");
+  if (langBtn) {
+    langBtn.addEventListener("click", toggleLang);
+  }
+
+  const details = document.getElementById("details");
+
+  fetch("data.json")
+    .then(res => res.json())
+    .then(data => {
+      globalData = data;
+      attachMapEvents();
+    });
+});
+
+// MUST BE GLOBAL
 function toggleLang() {
   currentLang = currentLang === "en" ? "bn" : "en";
   alert("Language switched to: " + currentLang.toUpperCase());
 }
+
 
 /* =========================
    MAIN LOAD
