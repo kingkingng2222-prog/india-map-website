@@ -50,12 +50,18 @@ header button {
   max-width: 500px;
 }
 
-svg path {
+#map svg path {
   fill: #cfd8dc;
   stroke: #333;
+  stroke-width: 1;
   cursor: pointer;
-  transition: fill 0.2s;
+  pointer-events: all;
 }
+
+#map svg path:hover {
+  fill: #90caf9;
+}
+
 
 svg path:hover {
   fill: #90caf9;
