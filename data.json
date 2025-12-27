@@ -1,42 +1,23 @@
 {
   "WB": {
     "state": {
-      "generalIntroduction": "West Bengal is an eastern state of India.",
-      "capitalAndMajorCities": "Kolkata, Howrah",
-      "geographicalLocation": "Eastern India",
-      "areaAndPopulation": "88,752 sq km, 9+ crore",
+      "generalIntroduction": "Test OK",
+      "capitalAndMajorCities": "Kolkata",
+      "geographicalLocation": "East India",
+      "areaAndPopulation": "Test",
       "languages": "Bengali",
-      "historicalBackground": "Freedom movement",
-      "cultureAndHeritage": "Rich culture",
-      "festivals": "Durga Puja",
-      "economy": "Agriculture and Industry",
-      "agriculture": "Rice, Jute",
-      "industries": "IT, Steel",
-      "rivers": "Ganga",
-      "naturalFeatures": "Plains and Hills",
-      "sundarbans": "Mangrove forest",
-      "education": "Universities",
-      "tourism": "Darjeeling"
+      "historicalBackground": "Test",
+      "cultureAndHeritage": "Test",
+      "festivals": "Test",
+      "economy": "Test",
+      "agriculture": "Test",
+      "industries": "Test",
+      "rivers": "Test",
+      "naturalFeatures": "Test",
+      "sundarbans": "Test",
+      "education": "Test",
+      "tourism": "Test"
     },
-    "cities": {
-      "Kolkata": {
-        "generalIntroduction": "Capital city of West Bengal",
-        "historicalBackground": "British capital",
-        "geographicalLocation": "Hooghly river bank",
-        "areaAndPopulation": "205 sq km",
-        "administrativeStatus": "Municipal Corporation",
-        "language": "Bengali",
-        "cultureAndHeritage": "Cultural capital",
-        "festivals": "Durga Puja",
-        "economy": "Trade and IT",
-        "education": "Universities",
-        "transportation": "Metro, Rail",
-        "architectureAndLandmarks": "Howrah Bridge",
-        "sports": "Football",
-        "foodCulture": "Rosogolla",
-        "tourism": "Victoria Memorial",
-        "importanceOfCityName": "From Kalikata"
-      }
-    }
+    "cities": {}
   }
 }
