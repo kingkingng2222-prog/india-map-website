@@ -1,22 +1,15 @@
 alert("SCRIPT LOADED");
 
-// Event delegation for SVG
 document.addEventListener("click", function (e) {
 
-  // check if clicked element is SVG path
-  if (e.target.tagName.toLowerCase() === "path") {
+  console.log("Clicked element:", e.target);
 
-    const stateId = e.target.id;
+  // Try to find nearest PATH (even if click on stroke)
+  const path = e.target.closest("path");
 
-    if (!stateId) {
-      alert("Path has no ID");
-      return;
-    }
-
-    alert("State clicked: " + stateId);
-
-    // optional visual feedback
-    e.target.style.fill = "#90caf9";
+  if (path) {
+    alert("State clicked: " + path.id);
+    path.style.fill = "#90caf9";
   }
 
 });
