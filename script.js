@@ -1,3 +1,4 @@
+let currentLang = "en";
 document.addEventListener("DOMContentLoaded", function () {
 
   const details = document.getElementById("details");
@@ -13,6 +14,11 @@ document.addEventListener("DOMContentLoaded", function () {
       const states = document.querySelectorAll("#map svg path");
 
       states.forEach(state => {
+        function toggleLang() {
+  currentLang = currentLang === "en" ? "bn" : "en";
+  alert("Language switched to: " + currentLang.toUpperCase());
+}
+
 
         state.addEventListener("click", function () {
           const code = this.id;
@@ -22,6 +28,10 @@ document.addEventListener("DOMContentLoaded", function () {
             details.innerHTML = "<p>No state data found</p>";
             return;
           }
+function toggleLang() {
+  currentLang = currentLang === "en" ? "bn" : "en";
+  alert("Language switched to: " + currentLang.toUpperCase());
+}
 
           const s = obj.state;
 
@@ -72,6 +82,10 @@ document.addEventListener("DOMContentLoaded", function () {
           details.innerHTML = "<p>No city data found</p>";
           return;
         }
+function toggleLang() {
+  currentLang = currentLang === "en" ? "bn" : "en";
+  alert("Language switched to: " + currentLang.toUpperCase());
+}
 
         let html = `<h2>${cityName} – City Information</h2>
           <p><b>1. General Introduction:</b> ${city.generalIntroduction || ""}</p>
