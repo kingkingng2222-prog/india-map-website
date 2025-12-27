@@ -1,45 +1,120 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Admin Panel</title>
+<meta charset="UTF-8">
+<title>Admin Panel – 16 Points</title>
+
 <style>
-body{font-family:Arial}
-input,textarea,button{width:100%;margin:5px 0}
-pre{border:1px solid #000;padding:10px}
+body { font-family: Arial, sans-serif; background:#f4f6f8; padding:20px; }
+h2 { margin-top:30px; }
+select, input, textarea, button {
+  width:100%; padding:6px; margin:5px 0;
+}
+textarea { height:50px; }
+button {
+  background:#0b5ed7; color:#fff; border:none; cursor:pointer;
+}
+pre {
+  background:#fff; border:1px solid #000; padding:10px;
+  white-space: pre-wrap;
+}
+.box {
+  background:#fff; padding:15px; border:1px solid #000; margin-bottom:20px;
+}
+.hidden { display:none; }
 </style>
 </head>
 
 <body>
 
-<h2>Admin Panel</h2>
+<h1>ADMIN PANEL (16 POINT SYSTEM)</h1>
 
-<h3>State</h3>
-<input id="scode" placeholder="State Code (WB)">
-<textarea id="sen" placeholder="State Intro EN"></textarea>
-<textarea id="sbn" placeholder="State Intro BN"></textarea>
+<div class="box">
+  <h2>Select Type</h2>
+  <select id="type" onchange="switchType()">
+    <option value="">-- Select --</option>
+    <option value="state">State Information</option>
+    <option value="city">City Information</option>
+  </select>
+</div>
 
-<h3>City</h3>
-<input id="cname" placeholder="City Name">
-<textarea id="cen" placeholder="City Intro EN"></textarea>
-<textarea id="cbn" placeholder="City Intro BN"></textarea>
+<!-- STATE -->
+<div id="stateBox" class="box hidden">
+  <h2>State (16 Points)</h2>
+  <input id="stateCode" placeholder="State Code (WB)">
 
-<button onclick="generate()">GENERATE JSON</button>
+  <!-- 16 STATE POINTS -->
+  <script>
+    for(let i=1;i<=16;i++){
+      document.write(`<textarea id="sp${i}" placeholder="Point ${i} (EN | BN separated by ||)"></textarea>`);
+    }
+  </script>
 
-<pre id="out"></pre>
+  <button onclick="addState()">ADD / UPDATE STATE</button>
+</div>
+
+<!-- CITY -->
+<div id="cityBox" class="box hidden">
+  <h2>City (16 Points)</h2>
+  <input id="stateForCity" placeholder="State Code (WB)">
+  <input id="cityName" placeholder="City Name">
+
+  <!-- 16 CITY POINTS -->
+  <script>
+    for(let i=1;i<=16;i++){
+      document.write(`<textarea id="cp${i}" placeholder="Point ${i} (EN | BN separated by ||)"></textarea>`);
+    }
+  </script>
+
+  <button onclick="addCity()">ADD / UPDATE CITY</button>
+</div>
+
+<h2>Generated JSON (Copy & Paste into data.json)</h2>
+<pre id="output"></pre>
 
 <script>
-let data={};
+let DATA = {};
 
-fetch("data.json").then(r=>r.json()).then(d=>data=d);
+fetch("data.json")
+  .then(r => r.json())
+  .then(d => DATA = d);
 
-function generate(){
-  const s=scode.value;
-  if(!data[s]) data[s]={state:{},cities:{}};
+function switchType(){
+  stateBox.classList.add("hidden");
+  cityBox.classList.add("hidden");
+  if(type.value==="state") stateBox.classList.remove("hidden");
+  if(type.value==="city") cityBox.classList.remove("hidden");
+}
 
-  data[s].state.intro={en:sen.value,bn:sbn.value};
-  data[s].cities[cname.value]={intro:{en:cen.value,bn:cbn.value}};
+function splitLang(val){
+  const parts = val.split("||");
+  return {
+    en: parts[0] ? parts[0].trim() : "",
+    bn: parts[1] ? parts[1].trim() : ""
+  };
+}
 
-  out.textContent=JSON.stringify(data,null,2);
+function addState(){
+  const code = stateCode.value;
+  if(!DATA[code]) DATA[code] = { state:{}, cities:{} };
+
+  for(let i=1;i<=16;i++){
+    DATA[code].state["p"+i] = splitLang(document.getElementById("sp"+i).value);
+  }
+  output.textContent = JSON.stringify(DATA, null, 2);
+}
+
+function addCity(){
+  const sc = stateForCity.value;
+  const cn = cityName.value;
+
+  if(!DATA[sc]) DATA[sc] = { state:{}, cities:{} };
+  DATA[sc].cities[cn] = {};
+
+  for(let i=1;i<=16;i++){
+    DATA[sc].cities[cn]["p"+i] = splitLang(document.getElementById("cp"+i).value);
+  }
+  output.textContent = JSON.stringify(DATA, null, 2);
 }
 </script>
 
