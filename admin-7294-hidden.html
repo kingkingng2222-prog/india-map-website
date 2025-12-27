@@ -1,4 +1,4 @@
-<html>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -8,7 +8,9 @@ body{font-family:Arial;background:#f4f6f8;padding:20px}
 h1{text-align:center;color:#0b5ed7}
 .box{background:#fff;border:2px solid #000;padding:15px;margin-bottom:20px}
 input,textarea,select,button{width:100%;margin:6px 0;padding:6px}
-button{background:#0b5ed7;color:#fff;border:none;cursor:pointer}
+button{cursor:pointer}
+.submit{background:#6c757d;color:#fff;border:none}
+.add{background:#0b5ed7;color:#fff;border:none}
 .hidden{display:none}
 pre{background:#fff;border:1px solid #000;padding:10px}
 </style>
@@ -20,7 +22,7 @@ pre{background:#fff;border:1px solid #000;padding:10px}
 
 <!-- SELECT -->
 <div class="box">
-  <h2>Select Information Type</h2>
+  <h2>Select Type</h2>
   <select id="type" onchange="switchType()">
     <option value="">-- Select --</option>
     <option value="state">State Information</option>
@@ -31,7 +33,9 @@ pre{background:#fff;border:1px solid #000;padding:10px}
 <!-- STATE -->
 <div id="stateBox" class="box hidden">
 <h2>State Information (16 Points)</h2>
+
 <input id="stateCode" placeholder="State Code (WB)">
+
 <textarea id="s1" placeholder="1. General Introduction"></textarea>
 <textarea id="s2" placeholder="2. Capital and Major Cities"></textarea>
 <textarea id="s3" placeholder="3. Geographical Location"></textarea>
@@ -49,12 +53,14 @@ pre{background:#fff;border:1px solid #000;padding:10px}
 <textarea id="s15" placeholder="15. Education"></textarea>
 <textarea id="s16" placeholder="16. Tourism"></textarea>
 
-<button onclick="addState()">ADD STATE</button>
+<button class="submit" onclick="previewState()">SUBMIT / GENERATE CODE</button>
+<button class="add" onclick="addState()">ADD STATE</button>
 </div>
 
 <!-- CITY -->
 <div id="cityBox" class="box hidden">
 <h2>City Information (16 Points)</h2>
+
 <input id="stateForCity" placeholder="State Code (WB)">
 <input id="cityName" placeholder="City Name">
 
@@ -75,14 +81,15 @@ pre{background:#fff;border:1px solid #000;padding:10px}
 <textarea id="c15" placeholder="15. Tourism"></textarea>
 <textarea id="c16" placeholder="16. Importance of city name"></textarea>
 
-<button onclick="addCity()">ADD CITY</button>
+<button class="submit" onclick="previewCity()">SUBMIT / GENERATE CODE</button>
+<button class="add" onclick="addCity()">ADD CITY</button>
 </div>
 
-<h2>Generated JSON</h2>
+<h2>Generated JSON Preview</h2>
 <pre id="output"></pre>
 
 <script>
-let data={};
+let data={}, temp={};
 
 fetch("data.json").then(r=>r.json()).then(d=>data=d);
 
@@ -93,9 +100,8 @@ function switchType(){
   if(type.value==="city") cityBox.classList.remove("hidden");
 }
 
-function addState(){
-  const c=stateCode.value;
-  data[c]={state:{
+function previewState(){
+  temp.state={
     generalIntroduction:s1.value,
     capitalAndMajorCities:s2.value,
     geographicalLocation:s3.value,
@@ -112,183 +118,42 @@ function addState(){
     sundarbans:s14.value,
     education:s15.value,
     tourism:s16.value
-  },cities:{}};
+  };
+  output.textContent=JSON.stringify(temp,null,2);
+}
+
+function addState(){
+  const c=stateCode.value;
+  data[c]={state:temp.state,cities:{}};
   output.textContent=JSON.stringify(data,null,2);
+}
+
+function previewCity(){
+  temp.city={
+    generalIntroduction:c1.value,
+    historicalBackground:c2.value,
+    geographicalLocation:c3.value,
+    areaAndPopulation:c4.value,
+    administrativeStatus:c5.value,
+    language:c6.value,
+    cultureAndHeritage:c7.value,
+    festivals:c8.value,
+    economy:c9.value,
+    education:c10.value,
+    transportation:c11.value,
+    architectureAndLandmarks:c12.value,
+    sports:c13.value,
+    foodCulture:c14.value,
+    tourism:c15.value,
+    importanceOfCityName:c16.value
+  };
+  output.textContent=JSON.stringify(temp,null,2);
 }
 
 function addCity(){
   const sc=stateForCity.value;
   if(!data[sc]) data[sc]={state:{},cities:{}};
-  data[sc].cities[cityName.value]={
-    generalIntroduction:c1.value,
-    historicalBackground:c2.value,
-    geographicalLocation:c3.value,
-    areaAndPopulation:c4.value,
-    administrativeStatus:c5.value,
-    language:c6.value,
-    cultureAndHeritage:c7.value,
-    festivals:c8.value,
-    economy:c9.value,
-    education:c10.value,
-    transportation:c11.value,
-    architectureAndLandmarks:c12.value,
-    sports:c13.value,
-    foodCulture:c14.value,
-    tourism:c15.value,
-    importanceOfCityName:c16.value
-  };
-  output.textContent=JSON.stringify(data,null,2);
-}
-</script>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Admin Panel</title>
-
-<style>
-body{
-  font-family: Arial;
-  background:#f4f6f8;
-  padding:20px;
-}
-h1{text-align:center;color:#0b5ed7;}
-.section{
-  background:#fff;
-  padding:15px;
-  border:2px solid #000;
-  margin-bottom:20px;
-}
-textarea,input{
-  width:100%;
-  padding:6px;
-  margin:5px 0;
-}
-button{
-  padding:10px;
-  background:#0b5ed7;
-  color:white;
-  border:none;
-  width:100%;
-  cursor:pointer;
-}
-pre{
-  background:#fff;
-  padding:10px;
-  border:1px solid #000;
-  margin-top:20px;
-}
-</style>
-</head>
-
-<body>
-
-<h1>ADMIN PANEL</h1>
-
-<!-- STATE -->
-<div class="section">
-<h2>State Information</h2>
-
-<input id="stateCode" placeholder="State Code (WB)">
-
-<textarea id="s1" placeholder="1. General Introduction"></textarea>
-<textarea id="s2" placeholder="2. Capital and Major Cities"></textarea>
-<textarea id="s3" placeholder="3. Geographical Location"></textarea>
-<textarea id="s4" placeholder="4. Area and Population"></textarea>
-<textarea id="s5" placeholder="5. Languages"></textarea>
-<textarea id="s6" placeholder="6. Historical Background"></textarea>
-<textarea id="s7" placeholder="7. Culture and Heritage"></textarea>
-<textarea id="s8" placeholder="8. Festivals"></textarea>
-<textarea id="s9" placeholder="9. Economy"></textarea>
-<textarea id="s10" placeholder="10. Agriculture"></textarea>
-<textarea id="s11" placeholder="11. Industries"></textarea>
-<textarea id="s12" placeholder="12. Rivers"></textarea>
-<textarea id="s13" placeholder="13. Natural Features"></textarea>
-<textarea id="s14" placeholder="14. Sundarbans"></textarea>
-<textarea id="s15" placeholder="15. Education"></textarea>
-<textarea id="s16" placeholder="16. Tourism"></textarea>
-</div>
-
-<!-- CITY -->
-<div class="section">
-<h2>City Information</h2>
-
-<input id="cityName" placeholder="City Name">
-
-<textarea id="c1" placeholder="1. General Introduction"></textarea>
-<textarea id="c2" placeholder="2. Historical Background"></textarea>
-<textarea id="c3" placeholder="3. Geographical Location"></textarea>
-<textarea id="c4" placeholder="4. Area and Population"></textarea>
-<textarea id="c5" placeholder="5. Administrative Status"></textarea>
-<textarea id="c6" placeholder="6. Language"></textarea>
-<textarea id="c7" placeholder="7. Culture and Heritage"></textarea>
-<textarea id="c8" placeholder="8. Festivals"></textarea>
-<textarea id="c9" placeholder="9. Economy"></textarea>
-<textarea id="c10" placeholder="10. Education"></textarea>
-<textarea id="c11" placeholder="11. Transportation"></textarea>
-<textarea id="c12" placeholder="12. Architecture and Landmarks"></textarea>
-<textarea id="c13" placeholder="13. Sports"></textarea>
-<textarea id="c14" placeholder="14. Food Culture"></textarea>
-<textarea id="c15" placeholder="15. Tourism"></textarea>
-<textarea id="c16" placeholder="16. Importance of city name"></textarea>
-
-<button onclick="submitData()">SUBMIT / ADD CITY</button>
-</div>
-
-<pre id="output"></pre>
-
-<script>
-let data = {};
-
-fetch("data.json")
-.then(r=>r.json())
-.then(d=>data=d);
-
-function submitData(){
-  const code = stateCode.value;
-  if(!data[code]) data[code]={state:{},cities:{}};
-
-  data[code].state={
-    generalIntroduction:s1.value,
-    capitalAndMajorCities:s2.value,
-    geographicalLocation:s3.value,
-    areaAndPopulation:s4.value,
-    languages:s5.value,
-    historicalBackground:s6.value,
-    cultureAndHeritage:s7.value,
-    festivals:s8.value,
-    economy:s9.value,
-    agriculture:s10.value,
-    industries:s11.value,
-    rivers:s12.value,
-    naturalFeatures:s13.value,
-    sundarbans:s14.value,
-    education:s15.value,
-    tourism:s16.value
-  };
-
-  data[code].cities[cityName.value]={
-    generalIntroduction:c1.value,
-    historicalBackground:c2.value,
-    geographicalLocation:c3.value,
-    areaAndPopulation:c4.value,
-    administrativeStatus:c5.value,
-    language:c6.value,
-    cultureAndHeritage:c7.value,
-    festivals:c8.value,
-    economy:c9.value,
-    education:c10.value,
-    transportation:c11.value,
-    architectureAndLandmarks:c12.value,
-    sports:c13.value,
-    foodCulture:c14.value,
-    tourism:c15.value,
-    importanceOfCityName:c16.value
-  };
-
+  data[sc].cities[cityName.value]=temp.city;
   output.textContent=JSON.stringify(data,null,2);
 }
 </script>
