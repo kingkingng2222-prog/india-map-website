@@ -2,69 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>India Interactive Map</title>
+  <title>India Map Test</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- SimpleMaps CSS -->
-  <link rel="stylesheet" href="https://simplemaps.com/static/css/countrymap.css">
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f4f6f8;
-    }
-
-    header {
-      background: #0b5ed7;
-      color: #fff;
-      padding: 10px;
-      text-align: center;
-    }
-
-    #container {
-      display: flex;
-      flex-wrap: wrap;
-    }
-
-    #map {
-      width: 100%;
-      max-width: 600px;
-      height: 500px;
-      margin: auto;
-    }
-
-    #details {
-      flex: 1;
-      background: #fff;
-      padding: 15px;
-      min-height: 500px;
-      border-left: 2px solid #ddd;
-    }
-  </style>
 </head>
-
 <body>
 
-<header>
-  <h2>India Map (Clickable States)</h2>
-</header>
+<h2>SimpleMaps India Test</h2>
 
-<div id="container">
-  <div id="map"></div>
+<!-- MAP CONTAINER (ID MUST BE EXACT) -->
+<div id="map" style="width:600px;height:500px;"></div>
 
-  <div id="details">
-    <p>Click any state on the map</p>
-  </div>
+<div id="details">
+  <p>Click a state</p>
 </div>
 
-<!-- SimpleMaps main library -->
+<!-- ✅ SimpleMaps CORE LIBRARY (MUST LOAD FIRST) -->
 <script src="https://simplemaps.com/static/js/countrymap.js"></script>
 
-<!-- YOUR MAP DATA FILE -->
+<!-- ✅ YOUR MAP DATA FILE -->
 <script src="mapdata.js"></script>
 
-<!-- OPTIONAL CUSTOM LOGIC -->
+<!-- ✅ YOUR CUSTOM SCRIPT -->
 <script src="script.js"></script>
 
 </body>
