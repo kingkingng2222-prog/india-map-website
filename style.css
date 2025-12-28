@@ -34,20 +34,40 @@ header {
 }
 
 /* 🔥 VERY IMPORTANT FOR CLICK */
+/* MAP WRAPPER */
+#map {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* SVG */
 #map svg {
   width: 100%;
+  max-width: 500px;
   height: auto;
-  pointer-events: all;
+  display: block;
+  margin: auto;
 }
 
+/* STATE SHAPE */
 #map svg path {
-  fill: #cfd8dc;
-  stroke: #333;
+  fill: #e0e0e0;
+  stroke: #2c2c2c;
   stroke-width: 1;
   cursor: pointer;
-  pointer-events: all;
+  transition: fill 0.2s, transform 0.1s;
 }
 
+/* HOVER EFFECT */
 #map svg path:hover {
   fill: #90caf9;
+  transform: scale(1.02);
+}
+
+/* SELECTED STATE (JS থেকে লাগবে) */
+#map svg path.active {
+  fill: #42a5f5;
+  stroke-width: 2;
 }
