@@ -1,42 +1,45 @@
 {
-  "wb": {
+  "WB": {
     "state": {
       "p1": { "en": "West Bengal is an eastern state of India.", "bn": "পশ্চিমবঙ্গ ভারতের পূর্বাঞ্চলের একটি রাজ্য।" },
-      "p2": { "en": "Capital: Kolkata.", "bn": "রাজধানী: কলকাতা।" },
-      "p3": { "en": "Located in Eastern India.", "bn": "ভারতের পূর্ব অংশে অবস্থিত।" },
-      "p4": { "en": "Area and population details.", "bn": "আয়তন ও জনসংখ্যা।" },
-      "p5": { "en": "Main language is Bengali.", "bn": "প্রধান ভাষা বাংলা।" },
-      "p6": { "en": "Rich historical background.", "bn": "সমৃদ্ধ ঐতিহাসিক পটভূমি।" },
-      "p7": { "en": "Famous for culture and heritage.", "bn": "সংস্কৃতি ও ঐতিহ্যের জন্য বিখ্যাত।" },
-      "p8": { "en": "Durga Puja is the main festival.", "bn": "দুর্গাপূজা প্রধান উৎসব।" },
+      "p2": { "en": "Capital is Kolkata.", "bn": "রাজধানী কলকাতা।" },
+      "p3": { "en": "Located in eastern India.", "bn": "ভারতের পূর্ব অংশে অবস্থিত।" },
+      "p4": { "en": "Large population.", "bn": "বৃহৎ জনসংখ্যা।" },
+      "p5": { "en": "Main language Bengali.", "bn": "প্রধান ভাষা বাংলা।" },
+      "p6": { "en": "Rich history.", "bn": "সমৃদ্ধ ইতিহাস।" },
+      "p7": { "en": "Strong culture.", "bn": "শক্তিশালী সংস্কৃতি।" },
+      "p8": { "en": "Durga Puja famous.", "bn": "দুর্গাপূজা বিখ্যাত।" },
       "p9": { "en": "Mixed economy.", "bn": "মিশ্র অর্থনীতি।" },
-      "p10": { "en": "Rice and jute farming.", "bn": "ধান ও পাট চাষ।" },
-      "p11": { "en": "Industries include IT and jute.", "bn": "আইটি ও পাট শিল্প।" },
-      "p12": { "en": "River Ganga flows here.", "bn": "গঙ্গা নদী প্রবাহিত।" },
-      "p13": { "en": "Plains and hills.", "bn": "সমতল ও পাহাড়।" },
-      "p14": { "en": "Sundarbans mangrove forest.", "bn": "সুন্দরবন ম্যানগ্রোভ বন।" },
-      "p15": { "en": "Many universities.", "bn": "বহু বিশ্ববিদ্যালয়।" },
-      "p16": { "en": "Major tourist destinations.", "bn": "প্রধান পর্যটন কেন্দ্র।" }
+      "p10": { "en": "Rice farming.", "bn": "ধান চাষ।" },
+      "p11": { "en": "IT and jute industries.", "bn": "আইটি ও পাট শিল্প।" },
+      "p12": { "en": "River Ganga.", "bn": "গঙ্গা নদী।" },
+      "p13": { "en": "Plains and hills.", "bn": "সমতল ও পাহাড়।" },
+      "p14": { "en": "Sundarbans.", "bn": "সুন্দরবন।" },
+      "p15": { "en": "Good education.", "bn": "ভালো শিক্ষা।" },
+      "p16": { "en": "Tourism hub.", "bn": "পর্যটন কেন্দ্র।" }
     },
-    "cities": {
-      "Kolkata": {
-        "p1": { "en": "Capital city of WB.", "bn": "পশ্চিমবঙ্গের রাজধানী।" },
-        "p2": { "en": "Former British capital.", "bn": "ব্রিটিশ আমলের রাজধানী।" },
-        "p3": { "en": "On Hooghly river.", "bn": "হুগলি নদীর তীরে।" },
-        "p4": { "en": "Large population.", "bn": "বৃহৎ জনসংখ্যা।" },
-        "p5": { "en": "Municipal Corporation.", "bn": "পৌর নিগম।" },
-        "p6": { "en": "Language Bengali.", "bn": "ভাষা বাংলা।" },
-        "p7": { "en": "Cultural capital.", "bn": "সাংস্কৃতিক রাজধানী।" },
-        "p8": { "en": "Durga Puja famous.", "bn": "দুর্গাপূজা বিখ্যাত।" },
-        "p9": { "en": "Business hub.", "bn": "ব্যবসায়িক কেন্দ্র।" },
-        "p10": { "en": "Many colleges.", "bn": "বহু কলেজ।" },
-        "p11": { "en": "Metro and rail.", "bn": "মেট্রো ও রেল।" },
-        "p12": { "en": "Howrah Bridge.", "bn": "হাওড়া ব্রিজ।" },
-        "p13": { "en": "Football popular.", "bn": "ফুটবল জনপ্রিয়।" },
-        "p14": { "en": "Famous sweets.", "bn": "বিখ্যাত মিষ্টি।" },
-        "p15": { "en": "Tourist city.", "bn": "পর্যটন শহর।" },
-        "p16": { "en": "Named after Kali.", "bn": "কালী থেকে নাম।" }
-      }
-    }
+    "cities": {}
+  },
+
+  "UP": {
+    "state": {
+      "p1": { "en": "Uttar Pradesh is a northern state.", "bn": "উত্তরপ্রদেশ ভারতের উত্তরাঞ্চলের রাজ্য।" },
+      "p2": { "en": "Capital Lucknow.", "bn": "রাজধানী লখনউ।" },
+      "p3": { "en": "Located in north India.", "bn": "উত্তর ভারতে অবস্থিত।" },
+      "p4": { "en": "Highly populated.", "bn": "অত্যন্ত জনবহুল।" },
+      "p5": { "en": "Hindi language.", "bn": "হিন্দি ভাষা।" },
+      "p6": { "en": "Ancient history.", "bn": "প্রাচীন ইতিহাস।" },
+      "p7": { "en": "Cultural heritage.", "bn": "সাংস্কৃতিক ঐতিহ্য।" },
+      "p8": { "en": "Festivals celebrated.", "bn": "বিভিন্ন উৎসব।" },
+      "p9": { "en": "Agriculture economy.", "bn": "কৃষিভিত্তিক অর্থনীতি।" },
+      "p10": { "en": "Wheat farming.", "bn": "গম চাষ।" },
+      "p11": { "en": "Small industries.", "bn": "ক্ষুদ্র শিল্প।" },
+      "p12": { "en": "Ganga & Yamuna.", "bn": "গঙ্গা ও যমুনা।" },
+      "p13": { "en": "Fertile land.", "bn": "উর্বর জমি।" },
+      "p14": { "en": "No mangroves.", "bn": "ম্যানগ্রোভ নেই।" },
+      "p15": { "en": "Many universities.", "bn": "বহু বিশ্ববিদ্যালয়।" },
+      "p16": { "en": "Tourism places.", "bn": "পর্যটন স্থান।" }
+    },
+    "cities": {}
   }
 }
